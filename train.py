@@ -42,6 +42,8 @@ model.add(Dropout(0.2))
 model.add(LSTM(256))
 model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
+filename = "weights-improvement-14-1.9205-bigger.hdf5"
+model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 # define the checkpoint
 filepath="weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
